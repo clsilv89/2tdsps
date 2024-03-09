@@ -24,6 +24,18 @@ class SegundoFragment : Fragment() {
 
         binding.buttonSegundoFragment.text = nomeUsuario
 
+        showBottomSheet()
+
         return binding.root
+    }
+
+    private fun showBottomSheet() {
+        val bottomSheetFragment = BottomSheetFragment.newInstance(
+            listOf("Cachorro", "Gato", "Rato", "Tartaruga", "Calopsita", "Iguana")
+        )
+
+        binding.buttonSegundoFragment.setOnClickListener {
+            bottomSheetFragment.show(parentFragmentManager, SegundoFragment::class.simpleName)
+        }
     }
 }

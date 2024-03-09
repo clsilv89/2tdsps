@@ -56,7 +56,10 @@ class PrimeiroFragment : Fragment() {
             }
         })
 
-        dialog.show()
+        binding.buttonAbrirDialog.setOnClickListener {
+            dialog.show()
+        }
+
         return binding.root
     }
 
